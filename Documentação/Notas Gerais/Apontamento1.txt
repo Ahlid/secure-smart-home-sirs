@@ -1,0 +1,45 @@
+proj.
+
+
+
+
+In this scenario,you should consider how to implement some of the described functions of the Smart Home gateway in a secure way
+
+os equipamentos sao todos simulados, onde todos devem ter endereços ip.
+
+
+
+
+criar um canal seguro, conseguindo assim aceder a consola de gestao em qualquer lado. e nao só, canais seguros em todo o lado. comunicacao em plain-txt e para esquecer, pelo menos neste ambiente.
+
+canal seguro é um must.
+
+comunicacao com os diferentes dispositivos deve ser feita usandos varios protocolos de comunicacao, cada dispositivo associado deve ter um ip, (cada dispositivo tem uma firewall?)
+algo ira servir de router.
+
+do ponto de vista da seguranca, os pacotes nao podem ser interceptados por outra maquina, de forma a uma maquina se fazer passar por outra. (ex: tcp attack, nao possibilitar que seja possivel o attack ao tcp by design, onde alguem externo consegue fechar uma conexao.)
+
+
+
+
+dividir em 3 objectivos, nivel simples medium e avancado e depois vai-se afinando com os profs.
+
+analise de trafego podemos tambem ir por ai (se eu cada vez que mandar pacotes para a cisco a minha luz acender entao alguem pode saber isso e ficar a escuta, tendo isso em conta, situacao a explorar, muita vaga ainda)
+
+de que forma a informaca e gerida e espalhada na rede, a informacao é privada? (pensar na autenticacao, nao repudiacao, availability, ...
+
+
+
+(analise de trafego)
+
+simular ataques?
+
+Na proposta
+	genero de modelo straid na proposta, 
+
+	(fazer) modelo de amecao, prevemos que o atacante consegue fazer x e y e estamos a prever fazer iisto para contra atacar,  se existir demonstracoes de ataques seria muito interessante.
+
+Na apresentacao pode existir demonstracao ou nao, era interessante.
+
+
+

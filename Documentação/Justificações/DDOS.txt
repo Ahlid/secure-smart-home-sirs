@@ -1,0 +1,3 @@
+DDOS
+
+Para previnir podemos limitar o numero de acessos pois nao e necessarios muitos utilizadores em simulateo

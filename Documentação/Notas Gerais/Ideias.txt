@@ -1,0 +1,67 @@
+
+
+Desenhar e configurar a rede no packet tracer
+Criar vários clients a comunicarem por tcp onde cada um representa o dispositivo terminal. Também ter um terminal servidor que representará o home controller(controlador de todos os dispositivos da casa).
+Criar uma consola remota que se irá ligar através de outro computador ao dispositivo home controller que irá redirecionar os pedidos aos dispositivos terminais.
+----------------
+
+Door device:
+   services:
+      OPEN
+      LOCK
+      UNLOCK
+
+Fridge device:
+	services:
+		RAISE_TEMPERATURE
+		LOWER_TEMPERATURE
+		GET_ITEMS
+		ADD_ITEM
+		REMOVE_ITEM
+
+Oven device:
+	services:
+		SET_TEMPERATURE(temperature)
+		PRE_HEAT(minutes)
+		TURN_OFF
+
+Washer device:
+	service:
+		START(program)
+		PAUSE
+		CONTINUE
+		STOP
+
+Lamp device:
+	service:
+		TURN_ON
+		TURN_OFF
+
+
+Air conditioner device:
+	service:
+
+
+
+
+Collect logs about every action for non-repudiation
+
+Channel with asymetric keys. First the terminal device requests the public key of the home controller. After receiving it the terminal encrypts its public key and sends it to the home controller. Now both devices have eachother public keys and can comunicate safely.(Authenticity)
+
+Risk Analyzis for each point of entry.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
