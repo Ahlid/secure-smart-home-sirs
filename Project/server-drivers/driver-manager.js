@@ -14,6 +14,7 @@ class DriverManager {
 
     expectAuth(socket, cb) {
         socket.on('auth', (authData) => {
+            console.log(authData);
             //todo: check up on the authentication credentials
 
             let driver = this.findDriver(authData.MAC);

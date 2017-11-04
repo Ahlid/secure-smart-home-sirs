@@ -6,9 +6,11 @@ let vantage = require('vantage')();
 //DRIVERS
 let DriverManager = require('./server-drivers/driver-manager');
 let DoorDriver = require('./server-drivers/door-driver');
+let FridgeDriver = require('./server-drivers/fridge-driver');
 
 let driverManager = new DriverManager(vantage);
 driverManager.addDriver(new DoorDriver());
+driverManager.addDriver(new FridgeDriver());
 //////////
 
 app.get('/', function(req, res){
@@ -22,7 +24,6 @@ function log(message) {
 }
 
 io.on('connection', function(socket){
-
     driverManager.expectAuth(socket, (driver) => {
         if(driver === null) {
             log('Device was not authorized.');
