@@ -6,6 +6,11 @@ class DoorDriver {
         this.requestID = 1;
     }
 
+    stringifyStatus(MAC, status) {
+        return `FRIDGE ${MAC} device status:\n` +
+            `  State: ${status.state}`;
+    }
+
     setVantage(vantage, MAC, socket) {
         socket.on('disconnect', () => {
             vantage.find(`unlock ${MAC}`).remove();
@@ -20,7 +25,7 @@ class DoorDriver {
             .description("Unlocks the door")
             .action(function(args, cb) {
                 that.unlock(MAC, socket, (result) => {
-                    this.log('DOOR device is ' + result.status);
+                    this.log(that.stringifyStatus(MAC, result.status));
                     cb();
                 });
             });
@@ -30,7 +35,7 @@ class DoorDriver {
             .description("Unlocks the door")
             .action(function(args, cb) {
                 that.lock(MAC, socket, (result) => {
-                    this.log('DOOR device is ' + result.status);
+                    this.log(that.stringifyStatus(MAC, result.status));
                     cb();
                 });
             });
@@ -40,7 +45,7 @@ class DoorDriver {
             .description("Returns the status of the Door")
             .action(function(args, cb) {
                 that.status(MAC, socket, (result) => {
-                    this.log('DOOR device is ' + result.status);
+                    this.log(that.stringifyStatus(MAC, result.status));
                     cb();
                 });
             });
@@ -55,27 +60,30 @@ class DoorDriver {
     }
 
     lock(MAC, socket, cb){
-        socket.on(this.MAC_prefix + this.requestID, (replyData) => {
-            socket.removeAllListeners(this.MAC_prefix + this.requestID);
+        let replyTo = MAC + this.requestID;
+        socket.on(replyTo, (replyData) => {
+            socket.removeAllListeners(replyTo);
             cb(replyData);
         });
-        socket.emit('LOCK', {replyTo: this.MAC_prefix + this.requestID});
+        socket.emit('LOCK', {replyTo});
     }
 
     unlock(MAC, socket, cb){
-        socket.on(this.MAC_prefix + this.requestID, (replyData) => {
-            socket.removeAllListeners(this.MAC_prefix + this.requestID);
+        let replyTo = MAC + this.requestID;
+        socket.on(replyTo, (replyData) => {
+            socket.removeAllListeners(replyTo);
             cb(replyData);
         });
-        socket.emit('UNLOCK', {replyTo: this.MAC_prefix + this.requestID});
+        socket.emit('UNLOCK', {replyTo});
     }
 
     status(MAC, socket, cb){
-        socket.on(this.MAC_prefix + this.requestID, (replyData) => {
-            socket.removeAllListeners(this.MAC_prefix + this.requestID);
+        let replyTo = MAC + this.requestID;
+        socket.on(replyTo, (replyData) => {
+            socket.removeAllListeners(replyTo);
             cb(replyData);
         });
-        socket.emit('STATUS', {replyTo: this.MAC_prefix + this.requestID});
+        socket.emit('STATUS', {replyTo});
     }
 }
 

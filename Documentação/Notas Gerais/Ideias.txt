@@ -7,17 +7,17 @@ Criar uma consola remota que se irá ligar através de outro computador ao dispo
 
 Door device:
    services:
-      OPEN
+   	  STATUS
       LOCK
       UNLOCK
 
 Fridge device:
-	services:
+	services
+	   	STATUS
 		RAISE_TEMPERATURE
 		LOWER_TEMPERATURE
-		GET_ITEMS
-		ADD_ITEM
-		REMOVE_ITEM
+		TURN_ON
+		TURN_OFF
 
 Oven device:
 	services:
