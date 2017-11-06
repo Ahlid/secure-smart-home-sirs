@@ -1,4 +1,5 @@
 let app = require('express')();
+let fs = require('fs');
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
 let vantage = require('vantage')();
@@ -7,10 +8,12 @@ let vantage = require('vantage')();
 let DriverManager = require('./server-drivers/driver-manager');
 let DoorDriver = require('./server-drivers/door-driver');
 let FridgeDriver = require('./server-drivers/fridge-driver');
+let OvenDriver = require('./server-drivers/oven-driver');
 
 let driverManager = new DriverManager(vantage);
 driverManager.addDriver(new DoorDriver());
 driverManager.addDriver(new FridgeDriver());
+driverManager.addDriver(new OvenDriver());
 //////////
 
 app.get('/', function(req, res){
@@ -45,7 +48,15 @@ http.listen(3000, function(){
     //todo: SSH on vantage(it is possible, check the github)
     vantage
         .delimiter("smart-home~$")
-        .listen(3001);
+        .listen(app, {
+            port: 3001,
+             ssl: true,
+            key: fs.readFileSync('./key.pem'),
+            cert: fs.readFileSync('./cert.pem'),
+              requestCert: true,
+            rejectUnauthorized: false,
+            passphrase: 'mestrado'
+        });
 
     vantage
         .command(`show logs`)

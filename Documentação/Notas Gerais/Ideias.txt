@@ -7,9 +7,9 @@ Criar uma consola remota que se irá ligar através de outro computador ao dispo
 
 Door device:
    services:
-   	  STATUS
-      LOCK
-      UNLOCK
+   	  STATUS 
+      LOCK 
+      UNLOCK 
 
 Fridge device:
 	services
