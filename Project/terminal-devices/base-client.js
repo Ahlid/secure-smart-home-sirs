@@ -6,7 +6,7 @@ let io = require('socket.io-client');
 class ClientBase {
     constructor(MAC, port, cb) {
         this.MAC = MAC;
-        let socket = io(`http://localhost:${port}`);
+        let socket = io(`https://localhost:${port}`,  {rejectUnauthorized: false});
         socket.on('auth-refused', () => {
             console.log(`MAC ${this.MAC}: authorization refused trying again in 2 min`);
             //try again in 2 min

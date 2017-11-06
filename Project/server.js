@@ -1,8 +1,6 @@
-let appSocketIO = require('express')();
 let appVantage = require('express')();
 let fs = require('fs');
-let http = require('http').Server(appSocketIO);
-let io = require('socket.io')(http);
+let https = require('https');
 let vantage = require('vantage')();
 
 //DRIVERS
@@ -17,19 +15,23 @@ driverManager.addDriver(new FridgeDriver());
 driverManager.addDriver(new OvenDriver());
 //////////
 
-appSocketIO.get('/', function(req, res){
-  res.send("Device Interface");
-});
-
-appVantage.get('/', function(req, res){
-    res.send("Vantage Interface");
-});
 
 let logs = "";
 function log(message) {
     logs += "Log: " + message + "\n";
     console.log(message);
 }
+
+let options = {
+    key: fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./cert.pem'),
+    passphrase: 'mestrado',
+    requestCert: false,
+    rejectUnauthorized: false
+};
+
+let deviceInterfaceApp = https.createServer(options);
+let io = require('socket.io').listen(deviceInterfaceApp);
 
 io.on('connection', function(socket){
     driverManager.expectAuth(socket, (driver) => {
@@ -48,26 +50,28 @@ io.on('connection', function(socket){
     log('User connected');
 });
 
-http.listen(3000, function(){
-
+deviceInterfaceApp.listen(3000, function(){
     log('Listening in port 3000');
-    vantage
-        .delimiter("smart-home~$")
-        .listen(appVantage, {
-            port: 3001,
-             ssl: true,
-            key: fs.readFileSync('./key.pem'),
-            cert: fs.readFileSync('./cert.pem'),
-            requestCert: true,
-            rejectUnauthorized: false,
-            passphrase: 'mestrado'
-        });
-
-    vantage
-        .command(`show logs`)
-        .description("Shows the server logs")
-        .action(function (args, cb) {
-            this.log(logs);
-            cb();
-        });
 });
+
+appVantage.get('/', function(req, res){
+    res.send("Vantage Interface");
+});
+
+vantage
+    .delimiter("smart-home~$")
+    .listen(appVantage, {
+        port: 3001,
+        ssl: true,
+        key: fs.readFileSync('./key.pem'),
+        cert: fs.readFileSync('./cert.pem'),
+        passphrase: 'mestrado'
+    });
+
+vantage
+    .command(`show logs`)
+    .description("Shows the server logs")
+    .action(function (args, cb) {
+        this.log(logs);
+        cb();
+    });
