@@ -50,8 +50,8 @@ io.on('connection', function(socket){
     log('User connected');
 });
 
-deviceInterfaceApp.listen(3000, function(){
-    log('Listening in port 3000');
+deviceInterfaceApp.listen(12345, function(){
+    log('Listening in port 12345');
 });
 
 appVantage.get('/', function(req, res){

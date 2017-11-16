@@ -20,7 +20,7 @@ class Oven extends Client {
         if (!MAC.startsWith(MAC_prefix)) {
             throw new Error('MAC address does not corresponds to a Oven device');
         }
-        super(MAC, 3000, (socket) => {
+        super(MAC, 12345, (socket) => {
             this.temperature = 180;
             this.actualTemperature = 0;
             this.state = "off";
