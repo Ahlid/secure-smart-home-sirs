@@ -10,7 +10,7 @@ class Door extends Client {
         if(!MAC.startsWith(MAC_prefix)){
            throw new Error('MAC address does not corresponds to a Door device');
         }
-        super(MAC, 3000, (socket) => {
+        super(MAC, 12345, (socket) => {
             this.state = "closed";
             this.startServices(socket);
         });

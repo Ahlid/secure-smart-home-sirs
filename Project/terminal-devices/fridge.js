@@ -17,7 +17,7 @@ class Fridge extends Client {
         if (!MAC.startsWith(MAC_prefix)) {
             throw new Error('MAC address does not corresponds to a Fridge device');
         }
-        super(MAC, 3000, (socket) => {
+        super(MAC, 12345, (socket) => {
             this.temperature = 0;
             this.state = "on";
             this.startServices(socket);

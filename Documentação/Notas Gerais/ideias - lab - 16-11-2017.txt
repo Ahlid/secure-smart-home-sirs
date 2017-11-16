@@ -1,0 +1,32 @@
+cifra de trafico dentro da nossa rede
+bootstrap dos devices
+
+letsencrypt - dao certificados
+	arranjar forma de os dispositivos acendao ao CA e sabem que e real
+
+em self signed
+	temos de arrnjar forma de os devices obeterem o certifcado
+
+na nossa rede usar https pode ser muito pesado (ver protocolos usados em iot,
+	mudar na rede interna o protocolo (o que pode implicar deixar socket.io)
+		solucao:	
+			arranjar um protocolo nosso
+			ver protocolos iot
+
+comunicacao entre dipositivos (trocar chave simetrica)
+
+no final se houver tempo:
+	implementar a comunicação para dispositivos com menos capacidade de processamento (dispostivos pequenos, que so enviam dados de leitura) (constrain devices)
+
+
+solucao de rogue devices:
+	os dispositivos so enviam informacao quando o servidor requisita por ela. para solucionar a questao de acessos indevidos por dispositivos ao exterior o servidor é que pede estados aos devices. 
+	para a remote console receber por exemplo alertas o servidor deve estar sempre a pedir dados aos devices e quando receber alertas envia para a consola remota.
+
+
+Pensar na solução de possibilitar dispositivos comunicar com o exterior (Ex: frigorífico comunicar com o exterior)
+
+para nivel avançado:
+	podemos ver a questão de optimização de comunicação na rede para constrained devices
+	implementar solucoes de segurança para dispositivos ligados por wifi (Ex: lampadas inteligentes)
+		
