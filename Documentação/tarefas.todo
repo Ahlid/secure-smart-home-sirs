@@ -1,0 +1,30 @@
+ 
+ ☐ Criar o relatório no overleaf
+ ☐ Fazer a introdução contemplando o objetivo do projeto
+
+ Identficação de vulnerabilidades e risco:
+   UML:
+       ☐ Desenhar o diagrama de componentes
+       ☐ Desenhar o diagrama de classes
+       ☐ Desenhar o diagrama de use-cases
+       ☐ Desenhar o diagrama de sequencia do protocolo de ligação entre os dispositivos e a gateway
+
+   ☐ Desenhar o modelo stride Threat Classification
+   ☐ Desenhar o modelo dread  Risk assesment
+   ☐ Desenhar a arvore de threats
+Ad-hoc:
+ ☐ Ligação remota e verificação da encriptação dos pacotes, fazer prints da captura dos pacotes para se colocar no relatório.
+ ☐ Documentar o código
+ ☐ Fazer com que os drivers consigam ir buscar pedidos pendentes aos aparelhos. Implica criar o sistema de pedidos em pooling.
+ ☐ Criar um aparelho por exemplo o frigorifico que dê para fazer compras online.
+ ☐ Desenhar a topologia de rede
+ ☐ Explicar como será feito o bootstrap dos dispositivos. Ou seja como é que os dispositivos se ligarão à gateway.
+
+ Ataques:
+   ☐ Escrever um texto sobre os replay attacks, talvez abordar o surreptitious forwarding
+   ☐ Escrever um texto sobre os Man in the middle attack(modificar pacotes por exemplo)
+   ☐ Escrever um texto sobre DNS poisoning, se um dos dispositivos fizer uma compra online poderá ter que passar pelo DNS server.
+ Medidas de segurança:
+   ☐ Explicar como é que garantimos a autenticidade dos dispositivos
+   ☐ Explicar como é que garantimos a confidencialidade 
+   ☐ Explicar como é que garantimos a integridade dos dados(modificação do pacotes pode gerar erros no programa, explicar como solucionamos este problema)
