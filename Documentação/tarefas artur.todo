@@ -1,0 +1,5 @@
+  ☐ Fazer com que os drivers consigam ir buscar pedidos pendentes aos aparelhos. Implica criar o sistema de pedidos em pooling. fazer o filtro de Domains ou ips(cuidado porque não permitir um dominio implica não permitir o ip respetivo). (Terminar Artur)
+   ☐ Explicar como será feito o bootstrap dos dispositivos. Ou seja como é que os dispositivos se ligarão à gateway. (Discutir em grupo, o Artur implementa)
+  ☐ Ligação remota e verificação da encriptação dos pacotes(wireshark), fazer prints da captura dos pacotes para se colocar no relatório.(Artur)
+  ☐ Problema (Artur)
+  ☐ Documentar o código (Artur)

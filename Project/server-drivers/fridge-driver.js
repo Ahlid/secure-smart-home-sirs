@@ -97,7 +97,7 @@ class FridgeDriver {
                 for(let request of replyData.requests) {
                     //todo verify if the url is permitted VERY IMPORTANT
                     //todo make request async
-                    request.post(request.url, {form:{key:'value'}}, function(err,httpResponse,body){
+                    request.post(request.url, {}, function(err,httpResponse,body){
                         if(err) {
                             //Error
                             socket.emit(REQUEST_RESPONSE, {
