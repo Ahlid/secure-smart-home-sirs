@@ -1,7 +1,7 @@
 let Client = require('./base-client');
 
 class Door extends Client {
-    constructor(MAC, port){
+    constructor(MAC, IP, port){
         let MAC_prefix = "01:02";
         let regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
         if(!regex.test(MAC)) {
@@ -10,7 +10,7 @@ class Door extends Client {
         if(!MAC.startsWith(MAC_prefix)){
            throw new Error('MAC address does not corresponds to a Door device');
         }
-        super(MAC, 12345, (socket) => {
+        super(MAC, IP, port, (socket) => {
             this.state = "closed";
             this.startServices(socket);
         });

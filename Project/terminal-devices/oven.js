@@ -11,7 +11,7 @@ const TEMPERATURE_DUMPER_FACTOR = 0.2;
 const ROOM_TEMPERATURE = 15;
 
 class Oven extends Client {
-    constructor(MAC, port) {
+    constructor(MAC, IP, port) {
         let MAC_prefix = "01:04";
         let regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
         if (!regex.test(MAC)) {
@@ -20,7 +20,7 @@ class Oven extends Client {
         if (!MAC.startsWith(MAC_prefix)) {
             throw new Error('MAC address does not corresponds to a Oven device');
         }
-        super(MAC, 12345, (socket) => {
+        super(MAC, IP, port, (socket) => {
             this.temperature = 180;
             this.actualTemperature = 0;
             this.state = "off";

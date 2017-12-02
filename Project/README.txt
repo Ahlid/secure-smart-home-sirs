@@ -4,4 +4,4 @@ npm install vantage -g
 
 Connect to the vantage server
 
-vantage 3001
+vantage --ssl 3001

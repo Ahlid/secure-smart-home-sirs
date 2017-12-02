@@ -9,15 +9,15 @@ let Oven = require('./terminal-devices/oven');
 switch(process.argv[2]){
     case 'door':
         console.log('door');
-        let door = new Door("01:02:10:35:53:55");
+        let door = new Door("01:02:10:35:53:55","127.0.0.1", 12345);
         break;
     case 'fridge':
         console.log('fridge');
-        let fridge = new Fridge("01:03:10:35:53:55");
+        let fridge = new Fridge("01:03:10:35:53:55","127.0.0.1", 12345);
         break;
     case 'oven':
         console.log('oven');
-        let oven = new Oven("01:04:10:35:53:55");
+        let oven = new Oven("01:04:10:35:53:55","127.0.0.1", 12345);
         break;
     default:
         console.log('invalid device');

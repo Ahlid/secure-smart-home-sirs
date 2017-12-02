@@ -3,9 +3,11 @@ const LOWER_TEMPERATURE = "LOWER_TEMPERATURE";
 const STATUS = "STATUS";
 const TURN_ON = "TURN_ON";
 const TURN_OFF = "TURN_OFF";
+const GET_REQUESTS = "GET_REQUESTS";
+const REQUEST_RESPONSE = "REQUEST_RESPONSE";
 
 
-class DoorDriver {
+class FridgeDriver {
 
     constructor() {
         this.MAC_prefix = "01:03";
@@ -22,10 +24,10 @@ class DoorDriver {
 
         socket.on('disconnect', () => {
             vantage.find(`status ${MAC}`).remove();
-            vantage.find(`raise temperature ${MAC}`).remove();
-            vantage.find(`lower temperature ${MAC}`).remove();
-            vantage.find(`turn on ${MAC}`).remove();
-            vantage.find(`turn off ${MAC}`).remove();
+            vantage.find(`fridge raise temperature ${MAC}`).remove();
+            vantage.find(`fridge lower temperature ${MAC}`).remove();
+            vantage.find(`fridge turn on ${MAC}`).remove();
+            vantage.find(`fridge turn off ${MAC}`).remove();
         });
 
         let that = this;
@@ -41,7 +43,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`raise temperature ${MAC}`)
+            .command(`fridge raise temperature ${MAC}`)
             .description("Raises the fridge temperature")
             .action(function (args, cb) {
                 that.raiseTemperature(MAC, socket, (result) => {
@@ -51,7 +53,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`lower temperature ${MAC}`)
+            .command(`fridge lower temperature ${MAC}`)
             .description("Lowers the fridge temperature")
             .action(function (args, cb) {
                 that.lowerTemperature(MAC, socket, (result) => {
@@ -61,7 +63,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`turn on ${MAC}`)
+            .command(`fridge turn on ${MAC}`)
             .description("Turn the fridge on")
             .action(function (args, cb) {
                 that.turnOn(MAC, socket, (result) => {
@@ -71,7 +73,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`turn off ${MAC}`)
+            .command(`fridge turn off ${MAC}`)
             .description("Turn the fridge off")
             .action(function (args, cb) {
                 that.turnOff(MAC, socket, (result) => {
@@ -80,6 +82,38 @@ class DoorDriver {
                 });
             });
 
+    }
+
+    bindDriver(MAC, socket) {
+        let interval = setInterval(() => {
+           //todo: check if the connection is still online
+
+            //Check if there are pending requests in the fridge
+
+            let replyTo = MAC + this.requestID;
+            socket.on(replyTo, (replyData) => {
+                socket.removeAllListeners(replyTo);
+                console.log("Pooling request list from fridge: " + JSON.stringify(replyData.requests));
+                for(let request of replyData.requests) {
+                    //todo verify if the url is permitted VERY IMPORTANT
+                    //todo make request async
+                    request.post(request.url, {form:{key:'value'}}, function(err,httpResponse,body){
+                        if(err) {
+                            //Error
+                            socket.emit(REQUEST_RESPONSE, {
+                                error: err
+                            });
+                        } else {
+                            //Success
+                            socket.emit(REQUEST_RESPONSE, {});
+                        }
+                    });
+                }
+            });
+
+            socket.emit(GET_REQUESTS, {replyTo});
+
+        }, 1000 * 1)
     }
 
     recognizes(MAC) {
@@ -141,4 +175,4 @@ class DoorDriver {
     }
 }
 
-module.exports = DoorDriver;
+module.exports = FridgeDriver;

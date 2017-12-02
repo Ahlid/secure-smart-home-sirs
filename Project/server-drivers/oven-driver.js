@@ -5,7 +5,7 @@ const TURN_ON_TIMEOUT = "TURN_ON_TIMEOUT";
 const TURN_OFF = "TURN_OFF";
 
 
-class DoorDriver {
+class OvenDriver {
 
     constructor() {
         this.MAC_prefix = "01:04";
@@ -24,10 +24,10 @@ class DoorDriver {
 
         socket.on('disconnect', () => {
             vantage.find(`status ${MAC}`).remove();
-            vantage.find(`raise temperature ${MAC}`).remove();
-            vantage.find(`lower temperature ${MAC}`).remove();
-            vantage.find(`turn on ${MAC}`).remove();
-            vantage.find(`turn off ${MAC}`).remove();
+            vantage.find(`oven raise temperature ${MAC}`).remove();
+            vantage.find(`oven lower temperature ${MAC}`).remove();
+            vantage.find(`oven turn on ${MAC}`).remove();
+            vantage.find(`oven turn off ${MAC}`).remove();
         });
 
         let that = this;
@@ -43,7 +43,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`raise temperature ${MAC}`)
+            .command(`oven raise temperature ${MAC}`)
             .description("Raises the oven temperature")
             .action(function (args, cb) {
                 that.raiseTemperature(MAC, socket, (result) => {
@@ -53,7 +53,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`lower temperature ${MAC}`)
+            .command(`oven lower temperature ${MAC}`)
             .description("Lowers the oven temperature")
             .action(function (args, cb) {
                 that.lowerTemperature(MAC, socket, (result) => {
@@ -63,7 +63,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`turn on ${MAC}`)
+            .command(`oven turn on ${MAC}`)
             .description("Turn the oven on")
             .action(function (args, cb) {
                 const self = this;
@@ -81,7 +81,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`turn off ${MAC}`)
+            .command(`oven turn off ${MAC}`)
             .description("Turn the oven off")
             .action(function (args, cb) {
                 that.turnOff(MAC, socket, (result) => {
@@ -89,7 +89,6 @@ class DoorDriver {
                     cb();
                 });
             });
-
     }
 
     recognizes(MAC) {
@@ -151,4 +150,4 @@ class DoorDriver {
     }
 }
 
-module.exports = DoorDriver;
+module.exports = OvenDriver;

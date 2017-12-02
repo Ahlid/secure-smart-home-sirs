@@ -36,7 +36,7 @@ let io = require('socket.io').listen(deviceInterfaceApp);
 io.on('connection', function(socket){
     driverManager.expectAuth(socket, (driver) => {
         if(driver === null) {
-            log('Device was not authorized.');
+            log('Device was not recognized');
             socket.disconnect();
             return;
         }
@@ -47,7 +47,7 @@ io.on('connection', function(socket){
         log('User disconnected');
     });
 
-    log('User connected');
+    log('Connection established');
 });
 
 deviceInterfaceApp.listen(12345, function(){

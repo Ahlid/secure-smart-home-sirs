@@ -1,6 +1,7 @@
 /**
  * Created by Ricardo Morais on 03/11/2017.
  */
+let fs = require("fs");
 
 class DriverManager {
     constructor(vantage) {
@@ -14,9 +15,19 @@ class DriverManager {
 
     expectAuth(socket, cb) {
         socket.on('auth', (authData) => {
-            console.log(authData);
-            //todo: check up on the authentication credentials
 
+            let allowedMACs = fs.readFileSync('allowed.txt').toString().split("\r\n");
+            let allowed = allowedMACs.some((mac)=> {
+                return mac.toUpperCase() === authData.MAC.toUpperCase();
+            });
+            if(!allowed) {
+                //reject device
+                socket.emit('auth-refused', {
+                    error: 'Not authorized'
+                });
+                cb(null);
+                return;
+            }
             let driver = this.findDriver(authData.MAC);
             if(driver === null) {
                 //reject device
@@ -24,9 +35,13 @@ class DriverManager {
                     error: 'No driver for MAC'
                 });
                 cb(null);
+                return;
             }
             socket.emit('auth-accepted');
             driver.setVantage(this.vantage, authData.MAC, socket);
+            if(driver.bindDriver != null) {
+                driver.bindDriver(authData.MAC, socket);
+            }
             cb(driver);
         })
     }

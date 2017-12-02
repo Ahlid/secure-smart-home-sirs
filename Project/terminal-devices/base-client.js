@@ -3,27 +3,42 @@
  */
 let io = require('socket.io-client');
 
-class ClientBase {
-    constructor(MAC, port, cb) {
+class Client {
+    constructor(MAC, IP, port, cb) {
         this.MAC = MAC;
-        let socket = io(`https://194.210.230.73:${port}`,  {rejectUnauthorized: false});
-        socket.on('auth-refused', () => {
-            console.log(`MAC ${this.MAC}: authorization refused trying again in 2 min`);
-            //try again in 2 min
+
+        let requestTimeout;
+        let handle = ()=> {
+            console.log("The request for authentication timed out. Trying again in 5 sec");
             setTimeout(()=>{
                 socket.emit('auth', { MAC: MAC });
-            }, 1000 * 60 * 2);
+                requestTimeout = setTimeout(handle, 5000);
+            }, 1000 * 5);
+        };
+
+        let socket = io(`https://${IP}:${port}`,  {rejectUnauthorized: false});
+        socket.on('auth-refused', () => {
+            console.log(`MAC ${this.MAC}: authorization refused trying again in 5 sec`);
+            clearTimeout(requestTimeout);
+            setTimeout(()=>{
+                socket.connect();
+                socket.emit('auth', { MAC: MAC });
+                requestTimeout = setTimeout(handle, 5000);
+            }, 1000 * 5);
         });
         socket.on('auth-accepted', () => {
             console.log(`MAC ${this.MAC}: authorization accepted`);
+            clearTimeout(requestTimeout);
             socket.off('auth-refused');
             socket.off('auth-accepted');
             cb(socket);
         });
         //Start by emitting an auth request
         socket.emit('auth', { MAC: MAC });
+        requestTimeout = setTimeout(handle, 5000);
+
         console.log(`MAC ${this.MAC}: attempting to gain authorization`);
     };
 }
 
-module.exports = ClientBase;
+module.exports = Client;

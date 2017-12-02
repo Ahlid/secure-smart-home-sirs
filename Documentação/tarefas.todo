@@ -28,3 +28,14 @@ Ad-hoc:
    ☐ Explicar como é que garantimos a autenticidade dos dispositivos
    ☐ Explicar como é que garantimos a confidencialidade 
    ☐ Explicar como é que garantimos a integridade dos dados(modificação do pacotes pode gerar erros no programa, explicar como solucionamos este problema)
+Relatório:
+  Mandatory body sections:
+
+    ☐ Problem (Given the chosen scenario, why is security necessary? What is the main problem solved? Use around 200 words)
+
+    ☐ Requirements (Which security requirements were identified for the solution? Present as list)
+    ☐ Solution (overview with diagram and explanation with around 200 words or less. Describe basic, intermediate, and advanced versions of the solution. Be explicit about keys and how they will be distributed)
+    ☐ Results (What was actually implemented?)
+    ☐ Evaluation (How do you evaluate your solution? Mention strengths and weaknesses. Justify implementation choices.)
+    ☐ Conclusion (Ending statements in 1 or 2 paragraphs)
+    ☐ References (short list of essential tools and publications with a brief description of how it was used for the project)
