@@ -1,0 +1,22 @@
+[SIRS]
+
+[Init offline]
+	[server]
+		node server.js
+
+	[clients]
+		node clients.js
+
+	[remote console]
+		vantage --ssl 3001
+
+
+[Init online]
+	[server]
+		node server.js
+
+	[clients]
+		node clients.js
+
+	[remote console]
+		vantage --ssl 3001

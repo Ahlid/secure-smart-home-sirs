@@ -1,0 +1,36 @@
+ 
+ ✔ Criar o relatório no overleaf @done (17-12-02 01:38)
+ ☐ Fazer a introdução contemplando o objetivo do projeto (Ricardo)
+
+ Identficação de vulnerabilidades e risco:
+   UML:
+     ☐ Desenhar o diagrama de componentes (Ricardo)
+     ☐ Desenhar o diagrama de classes (Ricardo)
+     ☐ Desenhar o diagrama de sequencia do protocolo de ligação entre os dispositivos e a gateway (Artur)
+   ☐ Desenhar o modelo stride Threat Classification (EM grupo)
+   ☐ Desenhar a arvore de threats (EM grupo)
+   ☐ Desenhar o modelo dread  Risk assesment (EM grupo)
+Ad-hoc:
+ ☐ Suportart autenticação dos devices a partir de um serviço na cloud, No Final Apenas (http://docs.thinger.io/api/).
+ ☐ Make the devices connect and share information between each other. (Ricardo, Artur)
+ ☐ ReadMe file (Ricardo, Artur)
+ ☐ Make different models for the same type of device(uses the same driver but behaves in different ways) (Artur)
+ ☐ Ligação remota e verificação da encriptação dos pacotes(wireshark), fazer prints da captura dos pacotes para se colocar no relatório.(Artur)
+ ☐ Documentar o código (Artur)
+ ☐ Fazer com que os drivers consigam ir buscar pedidos pendentes aos aparelhos. Implica criar o sistema de pedidos em pooling. fazer o filtro de Domains ou ips(cuidado porque não permitir um dominio implica não permitir o ip respetivo). (Terminar Artur)
+ ✔ Criar um aparelho por exemplo o frigorifico que dê para fazer compras online. @done (17-12-02 02:08)
+ ☐ Desenhar a topologia de rede (Ricardo)
+ ☐ Explicar como será feito o bootstrap dos dispositivos. Ou seja como é que os dispositivos se ligarão à gateway. (Discutir em grupo, o Artur implementa)
+
+ Ataques:
+   ☐ Escrever um texto sobre os replay attacks, talvez abordar o surreptitious forwarding ()
+   ☐ Escrever um texto sobre os Man in the middle attack(modificar pacotes por exemplo) ()
+   ☐ Escrever um texto sobre DNS poisoning, se um dos dispositivos fizer uma compra online poderá ter que passar pelo DNS server. ()
+ Medidas de segurança:
+   ☐ Explicar como é que garantimos a autenticidade dos dispositivos
+   ☐ Explicar como é que garantimos a confidencialidade 
+   ☐ Explicar como é que garantimos a integridade dos dados(modificação do pacotes pode gerar erros no programa, explicar como solucionamos este problema)
+Relatório:
+  ☐ Problema (Artur)
+  ☐ Resultados (Artur Ricardo)
+  ☐ 3.1 Ricardo
