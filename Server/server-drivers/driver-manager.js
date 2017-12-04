@@ -4,9 +4,10 @@
 let fs = require("fs");
 
 class DriverManager {
-    constructor(vantage) {
+    constructor(vantage, MacSocketHash) {
         this.drivers = [];
         this.vantage = vantage;
+        this.MacSocketHash = MacSocketHash;
     }
 
     addDriver(driver) {
@@ -40,7 +41,7 @@ class DriverManager {
             socket.emit('auth-accepted');
             driver.setVantage(this.vantage, authData.MAC, socket);
             if(driver.bindDriver != null) {
-                driver.bindDriver(authData.MAC, socket);
+                driver.bindDriver(authData.MAC, socket, this.MacSocketHash);
             }
             cb(driver,authData.MAC);
         })

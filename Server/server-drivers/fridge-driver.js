@@ -11,13 +11,71 @@ class FridgeDriver {
 
     constructor() {
         this.MAC_prefix = "01:03";
-        this.requestID = 1;
+        this.isPoolConfigured = false;
     }
 
     stringifyStatus(MAC, status) {
         return `FRIDGE ${MAC} device status:\n` +
-               `  Temperature: ${status.temperature}\n` +
-               `  State: ${status.state}`;
+            `  Temperature: ${status.temperature}\n` +
+            `  State: ${status.state}`;
+    }
+
+    configurePool(replyTo, socket, MacSocketHash) {
+        this.isPoolConfigured = true;
+        socket.on(replyTo, (replyData) => {
+
+            console.log("Pooling request list from fridge: " + JSON.stringify(replyData.requests));
+            for (let request of replyData.requests) {
+                //todo verify if the url is permitted VERY IMPORTANT
+                //todo make request async
+                switch (request.type) {
+
+                    case 'communicateWithDevice':
+
+                        let deviceRequestedSocket = MacSocketHash[request.deviceMac];
+                        let command = request.deviceCommand;
+                        //se o comando existir
+                        if (deviceRequestedSocket.iotDriver[command]) {
+                            deviceRequestedSocket.iotDriver[command](request.deviceMac, deviceRequestedSocket, (replyData) => {
+                                socket.emit(REQUEST_RESPONSE, {
+                                    err: false,
+                                    id: request.id,
+                                    replyData: replyData
+                                });
+                            })
+                        } else {
+                            socket.emit(REQUEST_RESPONSE, {err: true, id: request.id});
+                        }
+
+                        break;
+                    //data
+                    //data.deviceMac
+                    //data.deviceCommandW
+                    //data.id -> the request id
+                    /*   socket.on('communicateWithDevice', function (data) {
+
+
+
+
+
+                       });  */
+                    default:
+                        request.post(request.url, {}, function (err, httpResponse, body) {
+                            if (err) {
+                                //Error
+                                socket.emit(REQUEST_RESPONSE, {
+                                    error: err,
+                                    id: request.id
+                                });
+                            } else {
+                                //Success
+                                socket.emit(REQUEST_RESPONSE, {error: false, id: request.id});
+                            }
+                        });
+                        break;
+                }
+            }
+        });
     }
 
     setVantage(vantage, MAC, socket) {
@@ -84,34 +142,14 @@ class FridgeDriver {
 
     }
 
-    bindDriver(MAC, socket) {
+    bindDriver(MAC, socket, MacSocketHash) {
         let interval = setInterval(() => {
-           //todo: check if the connection is still online
 
-            //Check if there are pending requests in the fridge
-
-            let replyTo = MAC + this.requestID;
-            socket.on(replyTo, (replyData) => {
-                socket.removeAllListeners(replyTo);
-                console.log("Pooling request list from fridge: " + JSON.stringify(replyData.requests));
-                for(let request of replyData.requests) {
-                    //todo verify if the url is permitted VERY IMPORTANT
-                    //todo make request async
-                    request.post(request.url, {}, function(err,httpResponse,body){
-                        if(err) {
-                            //Error
-                            socket.emit(REQUEST_RESPONSE, {
-                                error: err
-                            });
-                        } else {
-                            //Success
-                            socket.emit(REQUEST_RESPONSE, {});
-                        }
-                    });
-                }
-            });
-
-            socket.emit(GET_REQUESTS, {replyTo});
+            //todo: check if the connection is still online
+            if(!this.isPoolConfigured){
+                this.configurePool(MAC,socket,MacSocketHash);
+            }
+            socket.emit(GET_REQUESTS, {replyTo : MAC});
 
         }, 1000 * 1)
     }

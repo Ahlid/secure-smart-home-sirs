@@ -4,8 +4,8 @@ let https = require('https');
 let vantage = require('vantage')();
 
 //mac-socket
-let MacSocketHash = [];
-let SocketIdMac = [];
+let MacSocketHash = {};
+let SocketIdMac = {};
 
 //DRIVERS
 let DriverManager = require('./server-drivers/driver-manager');
@@ -13,7 +13,7 @@ let DoorDriver = require('./server-drivers/door-driver');
 let FridgeDriver = require('./server-drivers/fridge-driver');
 let OvenDriver = require('./server-drivers/oven-driver');
 
-let driverManager = new DriverManager(vantage);
+let driverManager = new DriverManager(vantage, MacSocketHash);
 driverManager.addDriver(new DoorDriver());
 driverManager.addDriver(new FridgeDriver());
 driverManager.addDriver(new OvenDriver());
@@ -57,25 +57,6 @@ io.on('connection', function (socket) {
 
     });
 
-    //data
-    //data.deviceMac
-    //data.deviceCommandW
-    //data.id -> the request id
-    socket.on('communicateWithDevice', function (data) {
-        //todo:check policies
-
-        let deviceRequestedSocket = MacSocketHash[data.deviceMac];
-        let command = data.deviceCommand;
-        //se o comando existir
-        if (deviceRequestedSocket.iotDriver[command]) {
-            deviceRequestedSocket.iotDriver[command](data.deviceMac, deviceRequestedSocket, (replyData) => {
-                socket.emit('communicateWithDeviceResult', {status: false, id: data.id, replyData: replyData});
-            })
-        } else {
-            socket.emit('communicateWithDeviceResult', {status: false, id: data.id});
-        }
-
-    });
 
     log('Connection established');
 });

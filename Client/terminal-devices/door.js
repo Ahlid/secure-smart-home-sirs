@@ -39,21 +39,23 @@ class Door extends Client {
                 });
                 return;
             }
-            this.status = "locked";
+            this.state = "locked";
             socket.emit(data.replyTo, {
                 status: this.getStatus()
             });
         });
 
         socket.on('UNLOCK', (data) => {
-            this.status = "unlock";
+            this.state = "unlock";
             socket.emit(data.replyTo, {
-                status: this.getStatus()
+                state: this.getStatus()
             });
         });
 
         console.log(`MAC ${this.MAC}: has started its services`);
     }
+
+
 }
 
 module.exports = Door;

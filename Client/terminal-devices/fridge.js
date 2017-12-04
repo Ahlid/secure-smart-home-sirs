@@ -6,8 +6,6 @@ const LOWER_TEMPERATURE = "LOWER_TEMPERATURE";
 const STATUS = "STATUS";
 const TURN_ON = "TURN_ON";
 const TURN_OFF = "TURN_OFF";
-const GET_REQUESTS = "GET_REQUESTS";
-const REQUEST_RESPONSE = "REQUEST_RESPONSE";
 
 
 class Fridge extends Client {
@@ -24,10 +22,6 @@ class Fridge extends Client {
             this.temperature = 0;
             this.state = "on";
             this.milkRequests = 0;
-            this.pendingRequest = [];
-            this.latestRequestID = 1;   //counter for the request id
-            this.requestErrors = 0;     //number of requests that failed
-            this.requestSuccesses = 0;  //number of requests that succeeded
             this.startServices(socket);
         });
     }
@@ -79,34 +73,12 @@ class Fridge extends Client {
             });
         });
 
-        socket.on(GET_REQUESTS, (data) => {
-            socket.emit(data.replyTo, {
-                requests: this.getRequests()
-            });
-        });
 
-        socket.on(REQUEST_RESPONSE, (data) => {
-            //remove the request from the list since it is no longer pending(its completed)
-            if(data.error !== null) {
-                this.requestErrors ++;
-            } else {
-                this.requestSuccesses ++;
-            }
-
-            for(let i = 0; i < this.pendingRequest.length; i++) {
-                if(this.pendingRequest[i].requestID === data.requestID) {
-                    this.pendingRequest.splice(i, 1);
-                    break;
-                }
-            }
-        });
 
         console.log(`MAC ${this.MAC}: has started its services`);
     }
 
-    getRequests() {
-        return this.pendingRequest;
-    }
+
 
     userBuyMilkOnlineRequest() {
         let request = {
