@@ -12,15 +12,87 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fridge-driver.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fridge-driver.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-drivers/fridge-driver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="328">
               <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaScript-modules-diagram/C:/Users/pctm/Documents/secure-smart-home-sirs/Server" pinned="false" current-in-tab="true">
+        <entry file="uml://JavaScript-modules-diagram/C:/Users/pctm/Documents/secure-smart-home-sirs/Server">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JavaScript-modules-diagram</ID>
+              <OriginalElement>$PROJECT_DIR$</OriginalElement>
+              <nodes>
+                <node x="439.0" y="128.0">$PROJECT_DIR$/server-drivers/door-driver.js</node>
+                <node x="201.0" y="447.0">$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;</node>
+                <node x="436.0" y="308.0">$PROJECT_DIR$/server-drivers/fridge-driver.js</node>
+                <node x="0.0" y="220.0">$PROJECT_DIR$/server-drivers/oven-driver.js</node>
+                <node x="239.0" y="105.0">$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;</node>
+                <node x="378.0" y="35.0">express</node>
+                <node x="390.0" y="378.0">fs</node>
+                <node x="141.0" y="336.0">https</node>
+                <node x="224.0" y="0.0">listen;</node>
+                <node x="126.0" y="88.0">vantage</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/door-driver.js">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/fridge-driver.js">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="vantage">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="listen;">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;" target="fs">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/oven-driver.js">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="fs">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="express">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="https">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.8011583011583011" x="310.7710843373494" y="262.7012048192771" />
+              <SelectedNodes>
+                <node>$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>All</Category>
+              </Categories>
+              <VISIBILITY>Details</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -108,14 +180,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="257" />
+    <option name="y" value="-21" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -132,28 +201,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="server-drivers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Client" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="JavaScriptPreferStrict" value="false" />
@@ -183,6 +254,14 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -218,15 +297,6 @@
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -269,11 +339,12 @@
       <workItem from="1511919685929" duration="6000" />
       <workItem from="1512101522077" duration="15032000" />
       <workItem from="1512185539886" duration="69000" />
+      <workItem from="1512390865888" duration="170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50171000" />
+    <option name="totallyTimeSpent" value="50341000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -288,16 +359,16 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30580357" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.296875" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7086743" sideWeight="0.50595236" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25641027" sideWeight="0.4940476" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14402619" sideWeight="0.4940476" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -327,7 +398,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -339,7 +410,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.js" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -476,56 +546,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/vantage/lib/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vantage/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="158" column="2" lean-forward="false" selection-start-line="158" selection-start-column="2" selection-end-line="158" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/dist/socket.io.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="0" column="24049" lean-forward="false" selection-start-line="0" selection-start-column="24049" selection-end-line="0" selection-end-column="24049" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/lib/socket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-730">
-          <caret line="64" column="18" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/lib/manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="368" column="21" lean-forward="false" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="66" column="15" lean-forward="true" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-drivers/door-driver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vantage/lib/server.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/vantage/lib/index.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/dist/socket.io.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/lib/socket.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/lib/manager.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-client/lib/index.js" />
     <entry file="file://$PROJECT_DIR$/terminal-devices/door.js" />
     <entry file="file://$PROJECT_DIR$/boot-devices.js" />
     <entry file="file://$PROJECT_DIR$/terminal-devices/oven.js" />
@@ -573,9 +599,88 @@
     <entry file="file://$PROJECT_DIR$/terminal-devices/base-client.js" />
     <entry file="file://$PROJECT_DIR$/server-drivers/fridge-driver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="328">
           <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-drivers/door-driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/pctm/Documents/secure-smart-home-sirs/Server">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes>
+            <node x="439.0" y="128.0">$PROJECT_DIR$/server-drivers/door-driver.js</node>
+            <node x="201.0" y="447.0">$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;</node>
+            <node x="436.0" y="308.0">$PROJECT_DIR$/server-drivers/fridge-driver.js</node>
+            <node x="0.0" y="220.0">$PROJECT_DIR$/server-drivers/oven-driver.js</node>
+            <node x="239.0" y="105.0">$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;</node>
+            <node x="378.0" y="35.0">express</node>
+            <node x="390.0" y="378.0">fs</node>
+            <node x="141.0" y="336.0">https</node>
+            <node x="224.0" y="0.0">listen;</node>
+            <node x="126.0" y="88.0">vantage</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/door-driver.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/fridge-driver.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="vantage">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="listen;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;" target="fs">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="$PROJECT_DIR$/server-drivers/oven-driver.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="fs">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="express">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/server.js#DoorDriver#208;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#DriverManager#144;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#FridgeDriver#266;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#OvenDriver#328;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#appVantage#4;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#fs#43;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#https#67;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#io#926;C:/Users/pctm/Documents/secure-smart-home-sirs/Server/server.js#vantage#97;" target="https">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.8011583011583011" x="310.7710843373494" y="262.7012048192771" />
+          <SelectedNodes>
+            <node>$PROJECT_DIR$/server-drivers/driver-manager.js#fs#56;</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
         </state>
       </provider>
     </entry>
