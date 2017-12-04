@@ -3,6 +3,10 @@ let fs = require('fs');
 let https = require('https');
 let vantage = require('vantage')();
 
+//mac-socket
+let MacSocketHash = [];
+let SocketIdMac = [];
+
 //DRIVERS
 let DriverManager = require('./server-drivers/driver-manager');
 let DoorDriver = require('./server-drivers/door-driver');
@@ -17,6 +21,7 @@ driverManager.addDriver(new OvenDriver());
 
 
 let logs = "";
+
 function log(message) {
     logs += "Log: " + message + "\n";
     console.log(message);
@@ -33,28 +38,53 @@ let options = {
 let deviceInterfaceApp = https.createServer(options);
 let io = require('socket.io').listen(deviceInterfaceApp);
 
-io.on('connection', function(socket){
-    driverManager.expectAuth(socket, (driver) => {
-        if(driver === null) {
+io.on('connection', function (socket) {
+    driverManager.expectAuth(socket, (driver, mac) => {
+        if (driver === null) {
             log('Device was not recognized');
             socket.disconnect();
             return;
         }
         log('Device authorized');
+        MacSocketHash[mac] = socket;
+        SocketIdMac[socket.id] = mac;
+        socket.iotDriver = driver;
     });
 
-    socket.on('disconnect', function(){
+    socket.on('disconnect', function () {
         log('User disconnected');
+        MacSocketHash[SocketIdMac[socket.id]] = null;
+
+    });
+
+    //data
+    //data.deviceMac
+    //data.deviceCommandW
+    //data.id -> the request id
+    socket.on('communicateWithDevice', function (data) {
+        //todo:check policies
+
+        let deviceRequestedSocket = MacSocketHash[data.deviceMac];
+        let command = data.deviceCommand;
+        //se o comando existir
+        if (deviceRequestedSocket.iotDriver[command]) {
+            deviceRequestedSocket.iotDriver[command](data.deviceMac, deviceRequestedSocket, (replyData) => {
+                socket.emit('communicateWithDeviceResult', {status: false, id: data.id, replyData: replyData});
+            })
+        } else {
+            socket.emit('communicateWithDeviceResult', {status: false, id: data.id});
+        }
+
     });
 
     log('Connection established');
 });
 
-deviceInterfaceApp.listen(12345, function(){
+deviceInterfaceApp.listen(12345, function () {
     log('Listening in port 12345');
 });
 
-appVantage.get('/', function(req, res){
+appVantage.get('/', function (req, res) {
     res.send("Vantage Interface");
 });
 

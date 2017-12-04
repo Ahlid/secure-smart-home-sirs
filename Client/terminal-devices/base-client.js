@@ -7,6 +7,7 @@ class Client {
     constructor(MAC, IP, port, cb) {
             this.MAC = MAC;
 
+
         let requestTimeout;
         let handle = ()=> {
             console.log("The request for authentication timed out. Trying again in 5 sec");
@@ -17,6 +18,7 @@ class Client {
         };
 
         let socket = io(`https://${IP}:${port}`,  {rejectUnauthorized: false});
+
         socket.on('auth-refused', () => {
             console.log(`MAC ${this.MAC}: authorization refused trying again in 5 sec`);
             clearTimeout(requestTimeout);
@@ -38,6 +40,7 @@ class Client {
         requestTimeout = setTimeout(handle, 5000);
 
         console.log(`MAC ${this.MAC}: attempting to gain authorization`);
+        this.socket = socket;
     };
 }
 

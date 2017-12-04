@@ -42,7 +42,7 @@ class DriverManager {
             if(driver.bindDriver != null) {
                 driver.bindDriver(authData.MAC, socket);
             }
-            cb(driver);
+            cb(driver,authData.MAC);
         })
     }
 

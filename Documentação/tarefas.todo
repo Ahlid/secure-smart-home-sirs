@@ -12,7 +12,8 @@
    ☐ Desenhar o modelo dread  Risk assesment (EM grupo)
 Ad-hoc:
  ☐ Suportart autenticação dos devices a partir de um serviço na cloud, No Final Apenas (http://docs.thinger.io/api/).
- ☐ Make the devices connect and share information between each other. (Ricardo, Artur)
+ ✔ Make the devices connect and share information between each other. (Ricardo, Artur) @done (17-12-04 16:31)
+ ☐ Make gateway policies
  ☐ ReadMe file (Ricardo, Artur)
  ☐ Make different models for the same type of device(uses the same driver but behaves in different ways) (Artur)
  ☐ Ligação remota e verificação da encriptação dos pacotes(wireshark), fazer prints da captura dos pacotes para se colocar no relatório.(Artur)
