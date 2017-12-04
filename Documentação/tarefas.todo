@@ -4,8 +4,8 @@
 
  Identficação de vulnerabilidades e risco:
    UML:
-     ☐ Desenhar o diagrama de componentes (Ricardo)
-     ☐ Desenhar o diagrama de classes (Ricardo)
+     ✔ Desenhar o diagrama de componentes (Ricardo) @done (17-12-04 15:17)
+     ✔ Desenhar o diagrama de classes (Ricardo) @done (17-12-04 12:42)
      ☐ Desenhar o diagrama de sequencia do protocolo de ligação entre os dispositivos e a gateway (Artur)
    ☐ Desenhar o modelo stride Threat Classification (EM grupo)
    ☐ Desenhar a arvore de threats (EM grupo)
@@ -19,7 +19,7 @@ Ad-hoc:
  ☐ Documentar o código (Artur)
  ☐ Fazer com que os drivers consigam ir buscar pedidos pendentes aos aparelhos. Implica criar o sistema de pedidos em pooling. fazer o filtro de Domains ou ips(cuidado porque não permitir um dominio implica não permitir o ip respetivo). (Terminar Artur)
  ✔ Criar um aparelho por exemplo o frigorifico que dê para fazer compras online. @done (17-12-02 02:08)
- ☐ Desenhar a topologia de rede (Ricardo)
+ ✔ Desenhar a topologia de rede (Ricardo) @done (17-12-04 15:17)
  ☐ Explicar como será feito o bootstrap dos dispositivos. Ou seja como é que os dispositivos se ligarão à gateway. (Discutir em grupo, o Artur implementa)
 
  Ataques:
