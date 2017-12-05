@@ -9,7 +9,7 @@ const TURN_OFF = "TURN_OFF";
 
 
 class Fridge extends Client {
-    constructor(MAC, IP, port) {
+    constructor(MAC, IP, port, name) {
         let MAC_prefix = "01:03";
         let regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
         if (!regex.test(MAC)) {
@@ -18,7 +18,7 @@ class Fridge extends Client {
         if (!MAC.startsWith(MAC_prefix)) {
             throw new Error('MAC address does not corresponds to a Fridge device');
         }
-        super(MAC, IP, port, (socket) => {
+        super(MAC, IP, port, name, (socket) => {
             this.temperature = 0;
             this.state = "on";
             this.milkRequests = 0;

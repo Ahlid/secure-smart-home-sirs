@@ -1,0 +1,1 @@
+// device connected by wifi

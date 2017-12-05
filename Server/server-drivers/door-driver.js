@@ -3,27 +3,31 @@ class DoorDriver {
 
     constructor() {
         this.MAC_prefix = "01:02";
+        this.device_prefix = "door";
+        this.policies = {internet: [], intranet: []};
         this.requestID = 1;
     }
 
     stringifyStatus(MAC, status) {
-        return `FRIDGE ${MAC} device status:\n` +
+        return `DOOR ${MAC} device status:\n` +
             `  State: ${status.state}`;
     }
 
-    setVantage(vantage, MAC, socket) {
+    setVantage(vantage, MAC, name, socket) {
+        console.log(name)
         socket.on('disconnect', () => {
-            vantage.find(`unlock ${MAC}`).remove();
-            vantage.find(`lock ${MAC}`).remove();
-            vantage.find(`status ${MAC}`).remove();
+            vantage.find(`door unlock ${name}`).remove();
+            vantage.find(`door lock ${name}`).remove();
+            vantage.find(`door status ${name}`).remove();
         });
 
         let that = this;
 
         vantage
-            .command(`unlock ${MAC}`)
+            .command(`door unlock ${name}`)
             .description("Unlocks the door")
             .action(function(args, cb) {
+                this.log('Attemping')
                 that.unlock(MAC, socket, (result) => {
                     this.log(that.stringifyStatus(MAC, result.status));
                     cb();
@@ -31,7 +35,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`lock ${MAC}`)
+            .command(`door lock ${name}`)
             .description("Unlocks the door")
             .action(function(args, cb) {
                 that.lock(MAC, socket, (result) => {
@@ -41,7 +45,7 @@ class DoorDriver {
             });
 
         vantage
-            .command(`status ${MAC}`)
+            .command(`door status ${name}`)
             .description("Returns the status of the Door")
             .action(function(args, cb) {
                 that.status(MAC, socket, (result) => {
@@ -60,7 +64,7 @@ class DoorDriver {
     }
 
     lock(MAC, socket, cb){
-        let replyTo = MAC + this.requestID;
+        let replyTo = MAC + this.requestID++;
         socket.on(replyTo, (replyData) => {
             socket.removeAllListeners(replyTo);
             cb(replyData);
@@ -69,16 +73,17 @@ class DoorDriver {
     }
 
     unlock(MAC, socket, cb){
-        let replyTo = MAC + this.requestID;
+        let replyTo = MAC + this.requestID++;
         socket.on(replyTo, (replyData) => {
             socket.removeAllListeners(replyTo);
             cb(replyData);
         });
+        console.log('emit');
         socket.emit('UNLOCK', {replyTo});
     }
 
     status(MAC, socket, cb){
-        let replyTo = MAC + this.requestID;
+        let replyTo = MAC + this.requestID++;
         socket.on(replyTo, (replyData) => {
             socket.removeAllListeners(replyTo);
             cb(replyData);

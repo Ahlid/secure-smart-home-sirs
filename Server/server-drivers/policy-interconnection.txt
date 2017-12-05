@@ -1,0 +1,5 @@
+# source target (allow communication from source to target)
+# generic
+fridge www.google.pt
+# particular
+01:03:10:35:53:55 www.youtube.com

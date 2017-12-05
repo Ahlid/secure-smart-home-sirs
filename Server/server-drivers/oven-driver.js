@@ -9,6 +9,8 @@ class OvenDriver {
 
     constructor() {
         this.MAC_prefix = "01:04";
+        this.device_prefix = "ovan";
+        this.policies = {internet: [], intranet: []};
         this.requestID = 1;
     }
 
@@ -20,20 +22,20 @@ class OvenDriver {
                `  State: ${status.state}`;
     }
 
-    setVantage(vantage, MAC, socket) {
+    setVantage(vantage, MAC, name, socket) {
 
         socket.on('disconnect', () => {
-            vantage.find(`status ${MAC}`).remove();
-            vantage.find(`oven raise temperature ${MAC}`).remove();
-            vantage.find(`oven lower temperature ${MAC}`).remove();
-            vantage.find(`oven turn on ${MAC}`).remove();
-            vantage.find(`oven turn off ${MAC}`).remove();
+            vantage.find(`oven status ${name}`).remove();
+            vantage.find(`oven raise temperature ${name}`).remove();
+            vantage.find(`oven lower temperature ${name}`).remove();
+            vantage.find(`oven turn on ${name}`).remove();
+            vantage.find(`oven turn off ${name}`).remove();
         });
 
         let that = this;
 
         vantage
-            .command(`status ${MAC}`)
+            .command(`oven status ${name}`)
             .description("Shows the status of the oven")
             .action(function (args, cb) {
                 that.status(MAC, socket, (result) => {
@@ -43,7 +45,7 @@ class OvenDriver {
             });
 
         vantage
-            .command(`oven raise temperature ${MAC}`)
+            .command(`oven raise temperature ${name}`)
             .description("Raises the oven temperature")
             .action(function (args, cb) {
                 that.raiseTemperature(MAC, socket, (result) => {
@@ -53,7 +55,7 @@ class OvenDriver {
             });
 
         vantage
-            .command(`oven lower temperature ${MAC}`)
+            .command(`oven lower temperature ${name}`)
             .description("Lowers the oven temperature")
             .action(function (args, cb) {
                 that.lowerTemperature(MAC, socket, (result) => {
@@ -63,7 +65,7 @@ class OvenDriver {
             });
 
         vantage
-            .command(`oven turn on ${MAC}`)
+            .command(`oven turn on ${name}`)
             .description("Turn the oven on")
             .action(function (args, cb) {
                 const self = this;
@@ -81,7 +83,7 @@ class OvenDriver {
             });
 
         vantage
-            .command(`oven turn off ${MAC}`)
+            .command(`oven turn off ${name}`)
             .description("Turn the oven off")
             .action(function (args, cb) {
                 that.turnOff(MAC, socket, (result) => {

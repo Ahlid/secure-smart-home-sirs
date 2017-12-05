@@ -2,5 +2,60 @@
   ☐ Black list(disconectar e retirar o dispositivo da lista de alloweds)
   ☐ Explicar como será feito o bootstrap dos dispositivos. Ou seja como é que os dispositivos se ligarão à gateway. (Discutir em grupo, o Artur implementa)
   ☐ Ligação remota e verificação da encriptação dos pacotes(wireshark), fazer prints da captura dos pacotes para se colocar no relatório.(Artur)
-  ☐ Problema (Artur)
+  ☐ Problema (Artur)  - ler o que já está feito e ver a proposta
   ☐ Documentar o código (Artur)
+
+  políticas de 
+  em vez de ids usar nomes para indicar os dispositivos
+  criar dispositivos que usem outro tipo de 
+
+  socket io avaliar certificados
+
+
+  ☐ Dispositivos já existentes voltarem a funcionar correctamente
+  ☐ Fazer com que os drivers consigam ir buscar pedidos pendentes aos aparelhos. 
+      ☐ Implica criar o sistema de pedidos em pooling. 
+      ☐ Fazer o filtro de Domains ou ips(cuidado porque não permitir um dominio implica não permitir o ip respetivo).
+
+  ☐ Usar nomes em vez de ips
+
+  // create devices using the terminal
+
+
+  Inicialmente um dispositivo vem com mac address e uma password (isto em conjunto autentica um dispositivo numa fase inicial)
+    (esta password é a que vem fisica escrita no dispositivo e deve ser mudada apos a primeira conexao com o gateway com sucesso)
+
+
+    é possível gerar chaves e certificados em runtime?
+
+    config console like a router
+      fazer rogue a um device
+
+
+    na comunicacao que o tiago fez entre os devices - no gateway bloquear comuniccao com outros dispositivos      
+
+
+  porque e que nao existe nenhuma password quando entro com ssl?
+
+  porque e que os dispostiivos so tem um mac?
+
+
+  Se o servidor tive-se uma chave publica os devices conseguiam usá-la
+
+  
+  add devices through the console
+   
+  As políticas realizadas são as políticas de acesso (por agora)
+
+  ☐ permitir que na consola sejam adicionados novos devices pela consola remota
+
+  experimentar com um certificado errado (ver no vantage e o sockets)
+
+  abordar o topico mac spoofing (alguem utilizar o mac de um dispositivo valido)
+    (o melhor sera uma password, token, )
+
+ Pode existir uma medida de segurança onde a chave public dos dispositivos autorizados sao guardadas no servidor. O servidor assim, consegue verificar a autenticidade do emissor/device.
+o bootstrap agora dos dispositivos:
+  Caso actual:
+    O certificado do servidor é passado à mão para todos os servidores;
+    Os dispositivos são 

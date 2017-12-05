@@ -1,7 +1,7 @@
 let Client = require('./base-client');
 
 class Door extends Client {
-    constructor(MAC, IP, port){
+    constructor(MAC, IP, port, name){
         let MAC_prefix = "01:02";
         let regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
         if(!regex.test(MAC)) {
@@ -10,7 +10,7 @@ class Door extends Client {
         if(!MAC.startsWith(MAC_prefix)){
            throw new Error('MAC address does not corresponds to a Door device');
         }
-        super(MAC, IP, port, (socket) => {
+        super(MAC, IP, port, name, (socket) => {
             this.state = "closed";
             this.startServices(socket);
         });
@@ -32,6 +32,7 @@ class Door extends Client {
         });
 
         socket.on('LOCK', (data) => {
+            console.log(data);
             if(this.state === "open") {
                 socket.emit(data.replyTo, {
                     error: 'Cannot lock an opened door!',
